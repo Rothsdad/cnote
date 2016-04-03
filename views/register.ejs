@@ -1,0 +1,38 @@
+<%- include header %>
+    <div class="text-center page-title">新用户注册</div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-4 col-xs-offset-4">
+                <form method="post">
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="username" placeholder="用户名">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="password" class="form-control" name="password" placeholder="密码">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="password" class="form-control" name="passwordRepeat" placeholder="确认密码">
+                    </div>
+
+                    <button type="submit" class="btn btn-default center-block">注册</button>
+
+                    <% if (flag == 1) { %>
+                    <div class="text-center text-danger">用户名不能为空!</div>
+                    <% } else if (flag == 2) { %>
+                    <div class="text-center text-danger">密码不能为空!</div>
+                    <% } else if (flag == 3) { %>
+                    <div class="text-center text-danger">两次输入的密码不一致!</div>
+                    <% } else if (flag == 4) { %>
+                    <div class="text-center text-danger">用户名已经存在!</div>
+                    <% } else if (flag == 5) { %>
+                    <div class="text-center text-danger">用户名只能输入3-20个以字母开头、可带数字、“_”的字符!</div>
+                    <% } else if (flag == 6) { %>
+                    <div class="text-center text-danger">密码必须是大小写字母+数字且非纯数字!</div>
+                    <% } %>
+                </form>
+            </div>
+        </div>
+    </div>
+<%- include footer %>
